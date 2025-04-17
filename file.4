@@ -1,0 +1,35 @@
+import yfinance as yf
+import pandas as pd
+
+# Create a Ticker object for GameStop
+gme = yf.Ticker("GME")
+
+# Download historical stock data (last 5 years by default)
+gme_data = gme.history(period="5y")
+
+# Save to CSV
+gme_data.to_csv("gamestop_stock_data.csv")
+
+print(" GameStop stock data saved to 'gamestop_stock_data.csv'")
+
+
+Date,Revenue (USD Millions)
+2025,3823
+2024,5273
+2023,5927
+2022,6011
+2021,5090
+2020,6466
+2019,8285
+2018,8547
+2017,7965
+2016,9364
+2015,9296
+2014,9040
+2013,8887
+2012,9551
+2011,9474
+2010,9078
+2009,8806
+
+
