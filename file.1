@@ -1,0 +1,24 @@
+import yfinance as yf
+
+# Step 1: Create a Ticker object for Tesla
+tesla = yf.Ticker("TSLA")
+
+# Step 2: Get historical stock data (e.g., for the last 5 days)
+tesla_data = tesla.history(period="5d")
+
+# Step 3: Reset the index
+tesla_data.reset_index(inplace=True)
+
+# Step 4 (Optional): Save to CSV file
+tesla_data.to_csv("tesla_stock_data.csv", index=False)
+
+# Step 5: Display the first 5 rows
+print(tesla_data.head())
+
+
+Date,Open,High,Low,Close,Volume,Dividends,Stock Splits
+2025-04-08 00:00:00-04:00,245.0,250.44000244140625,217.8000030517578,221.86000061035156,171603500,0.0,0.0
+2025-04-09 00:00:00-04:00,224.69000244140625,274.69000244140625,223.8800048828125,272.20001220703125,219433400,0.0,0.0
+2025-04-10 00:00:00-04:00,260.0,262.489990234375,239.3300018310547,252.39999389648438,181722600,0.0,0.0
+2025-04-11 00:00:00-04:00,251.83999633789062,257.739990234375,241.36000061035156,252.30999755859375,128948100,0.0,0.0
+2025-04-14 00:00:00-04:00,258.3599853515625,261.79998779296875,245.92999267578125,252.35000610351562,99696500,0.0,0.0
